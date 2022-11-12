@@ -15,9 +15,9 @@ namespace Diploma.Controllers
         }
 
         [HttpGet("[action]")]
-        public IActionResult GetAllDoctorsVisists(int doctorId)
+        public IActionResult GetAllUserVisists(int userId)
         {
-            var visits = _visitService.GetAllDoctorsVisists(doctorId);
+            var visits = _visitService.GetAllDoctorsVisists(userId);
 
             return Ok(visits);
         }
@@ -30,6 +30,17 @@ namespace Diploma.Controllers
             return Ok();
         }
 
-        // Postaw diagnozę 
+        [HttpPut("[action]")]
+        public async Task<IActionResult> SetDiagnose([FromBody] VisitDto visit)
+        {
+            try
+            {
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
     }
 }

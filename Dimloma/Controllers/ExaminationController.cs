@@ -21,5 +21,13 @@ namespace Diploma.Controllers
 
             return Ok();
         }
+
+        [HttpGet("[action]")]
+        public IActionResult GetUsersExaminations(int userId)
+        {
+            //_examinationService.AddExamination(examination);
+
+            return Ok();
+        }
     }
 }
